@@ -1,0 +1,42 @@
+# Prerequisites
+*.d
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+*.bin
+
+# Linker output
+*.ilk
+*.map
+*.exp
+*.lst
+*.ld
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.so
+*.so.*
+
+# Executables
+*.exe
+*.out
+*.app
+*.hex
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
