@@ -2,10 +2,11 @@
 #include "ch32fun.h"
 
 int main() {
-	static int SHIFT_DELAY = 500;
+    int SHIFT_DELAY = 500;
     HD44780_FOUR_BIT_BUS bus = { 2, 16, PC3, PC4, PC5, PC6, PC1, PC2 };
 
     SystemInit();
+    funGpioInitAll();
     
     HD44780_initFourBitBus(&bus);
 
