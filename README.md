@@ -2,7 +2,8 @@
 
 <H2>CH32V003 drivers for common Hitachi HD44780 character LCD displays.</H2>
 Utilizes the CH32Fun toolchain.  Currently supports both two and four row HD44780 based displays.
-Based on the HD44780 [drivers I wrote for ESP-IDF](https://github.com/TheFlemoid/ESP-IDF-HD44780).
+
+Ported from the HD44780 drivers [I wrote for ESP-IDF](https://github.com/TheFlemoid/ESP-IDF-HD44780).
 
 &nbsp; 
 
@@ -16,8 +17,8 @@ Supports all standard HD44780 display functionality:
 
 &nbsp; 
 
-To use in a project, simply drop the HD44780 directory from this repo into either your core esp-idf components
-directory, or (more typically) drop it into the "components" directory of your individual project.
+To use this library, the HD44780 header and C files need to be placed in your build project, and configured
+in your projects Make file.  Examples of how to do this are included in the [`examples/`](./examples/) directory.
 
 &nbsp; 
 
@@ -29,7 +30,7 @@ Attribution is appreciated, but is in no way mandatory.
 ---
 
 <p align="center">
-    <img src="./res/ch32_hd44780_demo.gif" alt="Test Display Example"/>
+    <img src="./resources/ch32_hd44780_demo.gif" alt="Test Display Example"/>
 </p>
 
 Usage of this library is incredibly simple.  First you have to pick your mode of operation.
@@ -70,7 +71,7 @@ The structs are as follows:
   * 8: GPIO pin number connected to E
 * Example: 
 ```
-HD44780_FOUR_BIT_BUS fourBitBus = { 2, 16, 18, 19, 21, 22, 16, 17 }; 
+HD44780_FOUR_BIT_BUS fourBitBus = { 2, 16, PC3, PC4, PC5, PC6, PC1, PC2 }; 
 ```
 
 * 8-bit mode: HD44870_EIGHT_BIT_BUS which has twelve parameters
@@ -88,7 +89,7 @@ HD44780_FOUR_BIT_BUS fourBitBus = { 2, 16, 18, 19, 21, 22, 16, 17 };
   * 12: GPIO pin number connected to E
 * Example: 
 ```
-HD44780_EIGHT_BIT_BUS eightBitBus = { 2, 16, 18, 19, 21, 22, 23, 25, 26, 27, 16, 17 }; 
+HD44780_EIGHT_BIT_BUS eightBitBus = { 2, 16, PC7, PC0, PD3, PD2, PC3, PC4, PC5, PC6, PC1, PC2 }; 
 ```
 
 Once you've made the struct that corresponds to your desired mode of operation, call either HD44780_initFourBitBus or
