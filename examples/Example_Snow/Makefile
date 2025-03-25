@@ -1,6 +1,6 @@
 all : flash
 
-TARGET:=text_scroll
+TARGET:=Example_Snow
 ADDITIONAL_C_FILES+=../../HD44780.c
 
 TARGET_MCU?=CH32V003

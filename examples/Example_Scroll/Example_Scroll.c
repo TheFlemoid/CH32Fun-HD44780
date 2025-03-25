@@ -1,3 +1,16 @@
+/**
+ * File:       Example_Scroll.c
+ * Author:     Franklyn Dahlberg
+ * Created:    24 March, 2025
+ * Copyright:  2025 (c) Franklyn Dahlberg
+ * License:    MIT License (see https://choosealicense.com/licenses/mit/)
+ */
+
+/**
+ * Example for a 2x16 HD44780 display that shows a two line string with two 
+ * special characters that moves left to right on a loop.  Designed to 
+ * show basic HD44780 functionality.
+ */
 #include "../../HD44780.h"
 #include "ch32fun.h"
 
@@ -6,7 +19,6 @@ int main() {
     HD44780_FOUR_BIT_BUS bus = { 2, 16, PC3, PC4, PC5, PC6, PC1, PC2 };
 
     SystemInit();
-    funGpioInitAll();
     
     HD44780_initFourBitBus(&bus);
 
